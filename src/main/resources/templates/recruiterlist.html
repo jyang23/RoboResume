@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
     <link href = "https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
-    <title>Resume List</title>
+    <title>Recruiter List</title>
     <style>
         h2 {
             font-family: "Ubuntu"!important ;
@@ -27,48 +27,26 @@
 <body>
 
 <div class="topnav">
-    <a class="active">Resume List</a>
+    <a class="active">Recruiter List</a>
 </div>
+
+
 
 <div class="container">
     <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1280px-LinkedIn_Logo.svg.png"/>
-    <a href="/add">Resume Entry</a><br />
-    <a href="/recruit">Recruiter</a><br />
-<!----------------------------------------------------------------------------------------->
-    <p>
-        <tr th:each="resume : ${resumes}">
-            <th>Candidate:</th>
-            <td th:text = "${resume.id}"></td>
-            <br/>
-            <th>Name:</th>
-            <td th:text = "${resume.name}"></td>
-            <br/>
-            <th>Email Address:</th>
-            <td th:text = "${resume.emailaddress}"></td>
-            <br/>
-            <th>Phone Number:</th>
-            <td th:text = "${resume.phonenumber}"></td>
-            <br/>
-            <th>Educational Experience:</th>
-            <td th:text = "${resume.education}"></td>
-            <br/>
-            <th>Work Experience:</th>
-            <td th:text = "${resume.experience}"></td>
-            <br/>
-            <th>Skills:</th>
-            <td th:text = "${resume.skills}"></td>
-            <br/>
-            <b>
-                <td><b>Actions:</b></td>
-                <td>
-                    <a th:href="@{/update/{id}(id = ${resume.id})}">Update</a>-
-                    <a th:href="@{/delete/{id}(id = ${resume.id})}">Delete</a>
-                </td>
-                <br/>
-            </b>
-            <br/>
-        </tr>
-    </p>
+
+    <a href="/">Back to List</a><br />
+    <!----------------------------------------------------------------------------------------->
+
+
+    <div class="path">
+        <div class="path__display"><span id="message"></span></div>
+        <form action="javascript:Zork();">
+            <input type="text" name="command" id="command">
+            <button id = "submit" type="submit" value="skillset" onclick="skill();">Search for Skill</button>
+        </form>
+    </div>
+    
 </div>
 
 <div class="footer">

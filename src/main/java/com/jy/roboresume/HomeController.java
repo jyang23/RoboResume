@@ -30,6 +30,13 @@ public class HomeController {
         return "resumeform";
     }
 
+    @GetMapping("/recruit")
+    public String recruitList(Model model)
+    {
+        model.addAttribute("resume",new Resume());
+        return "recruiterlist";
+    }
+
     @PostMapping("/process")
     public String processForm(@Valid Resume resume, BindingResult result)
     {
