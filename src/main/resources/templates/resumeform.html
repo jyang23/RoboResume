@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link href = "/https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
+    <title>Resume Entry</title>
+    <style>
+        h2 {
+            font-family: "Ubuntu"!important ;
+        }
+        input[type=text]  {
+            font-family: "Ubuntu"!important ;
+            width: 100%;
+            border-radius: 10px;
+        }
+        textarea {
+            font-family: "Ubuntu"!important ;
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="topnav">
+    <a class="active">Resume Entry</a>
+</div>
+
+<div class="container">
+    <img src = "https://www.sccpre.cat/mypng/full/38-381156_resume-png-pluspng-resume-logo.png"/>
+<!--    <h2>New Resume</h2>-->
+    <form action="#"
+          th:action = "@{/process}"
+          th:object = "${resume}"
+          method="post">
+        <input type = "hidden" th:field="*{id}" />
+        Name                   :<br />
+        <input type = "text" th:field = "*{name}" />
+        <span th:if = "${#fields.hasErrors('name')}"
+              th:errors = "*{name}"></span> <br />
+        Email Address          :<br />
+        <input type = "text" th:field = "*{emailaddress}" />
+        <span th:if = "${#fields.hasErrors('emailaddress')}"
+              th:errors = "*{emailaddress}"></span> <br />
+        Phone Number           :<br />
+        <input type = "text" th:field = "*{phonenumber}" />
+        <span th:if = "${#fields.hasErrors('phonenumber')}"
+              th:errors = "*{phonenumber}"></span> <br />
+        Educational Experience :<br />
+        <textarea rows = "3" th:field = "*{education}" />
+        <span th:if = "${#fields.hasErrors('education')}"
+              th:errors = "*{education}"></span> <br />
+        Work Experience        :<br />
+        <textarea rows = "3" th:field = "*{experience}" />
+        <span th:if = "${#fields.hasErrors('experience')}"
+              th:errors = "*{experience}"></span> <br />
+        Skills                 :<br />
+        <textarea rows = "3" th:field = "*{skills}" />
+        <span th:if = "${#fields.hasErrors('skills')}"
+              th:errors = "*{skills}"></span> <br />
+        <br />
+        <input type = "submit" value = "Submit" />
+    </form>
+</div>
+
+<div class="footer">
+    <p>Bargain Basement LinkedIn Inc. 2019</p>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
