@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
+    <script type="text/javascript" src="jsfile.js"></script>
     <link href = "https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
     <title>Resume List</title>
     <style>
@@ -34,6 +35,14 @@
     <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1280px-LinkedIn_Logo.svg.png"/>
     <a href="/add">Resume Entry</a><br />
     <a href="/recruit">Recruiter</a><br />
+
+<!--    <div class="path">-->
+<!--        <div class="path__display"><span id="message"></span></div>-->
+<!--        <form action="javascript:contains();">-->
+<!--            <button id = "submit" type="submit" value="skillset" onclick="skill();">Filter by Skill</button>-->
+<!--            <input type="text" name="command" id="command">-->
+<!--        </form>-->
+<!--    </div>-->
 <!----------------------------------------------------------------------------------------->
     <p>
         <tr th:each="resume : ${resumes}">
@@ -69,6 +78,11 @@
             <br/>
         </tr>
     </p>
+
+    <div id="other" style="display:none">
+        <p> Hello</p>
+    </div>
+
 </div>
 
 <div class="footer">
